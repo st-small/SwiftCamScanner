@@ -46,7 +46,9 @@ public class CropView: UIView {
          - image: The UIImage you want in the crop frame
      */
     public func setUpImage(image : UIImage){
-        if(!self.subviews.contains(cropImageView)){
+        subviews.forEach { $0.removeFromSuperview() }
+        layer.sublayers?.forEach { $0.removeFromSuperlayer() }
+        cropCircles.removeAll()
             cropImageView = UIImageView(image: normalizedImage(image: image))
             cropImageView.contentMode = .scaleToFill
             cropImageView.frame = self.bounds
@@ -54,9 +56,6 @@ public class CropView: UIView {
             cropFrame = cropImageView.frame
             setUpCropRegion()
             setUpGestureRecognizer()
-            
-        }
-        
     }
     
     /**
