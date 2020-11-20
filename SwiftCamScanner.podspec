@@ -20,4 +20,5 @@ s.source_files = 'SwiftCamScanner/Classes/**/*'
 # s.public_header_files = 'Pod/Classes/**/*.h'
 s.dependency 'OpenCV'
 s.frameworks = 'UIKit'
+s.static_framework = true
 end
