@@ -188,7 +188,7 @@ public class CropView: UIView {
     
     @objc internal func panGesture(gesture : UIPanGestureRecognizer){
         let point = gesture.location(in: self)
-        if(gesture.state == UIGestureRecognizerState.began){
+        if(gesture.state == UIGestureRecognizer.State.began){
             selectedIndex = nil
             //Setup the point
             for i in stride(from: 1, to: 8, by: 2){
@@ -237,7 +237,7 @@ public class CropView: UIView {
             
         }
         
-        if(gesture.state == UIGestureRecognizerState.ended){
+        if(gesture.state == UIGestureRecognizer.State.ended){
             if let selectedIndex = selectedIndex{
                 cropCircles[selectedIndex].backgroundColor = circleBackgroundColor
                 cropCircles[selectedIndex].layer.borderColor = circleBorderColor.cgColor
@@ -255,7 +255,7 @@ public class CropView: UIView {
      */
     private func normalizedImage(image: UIImage) -> UIImage {
         
-        if (image.imageOrientation == UIImageOrientation.up) {
+        if (image.imageOrientation == UIImage.Orientation.up) {
             return image;
         }
         

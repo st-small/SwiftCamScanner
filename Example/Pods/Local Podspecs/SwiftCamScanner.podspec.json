@@ -22,5 +22,6 @@
 
     ]
   },
-  "frameworks": "UIKit"
+  "frameworks": "UIKit",
+  "static_framework": true
 }

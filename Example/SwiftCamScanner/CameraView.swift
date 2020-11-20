@@ -99,7 +99,7 @@ class CameraView: UIView {
         
         UIView.animate(withDuration: 0.15,
                        delay: 0.0,
-                       options: UIViewAnimationOptions(),
+                       options: UIView.AnimationOptions(),
                        animations: { () -> Void in
                         marker.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1.0)
         }) { (Bool) -> Void in

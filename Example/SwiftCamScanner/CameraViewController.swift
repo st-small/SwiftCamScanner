@@ -27,7 +27,7 @@ class CameraViewController: UIViewController {
         cameraView.capturePhoto(){(photo) in
         //set thumbnail image
         DispatchQueue.main.async { () -> Void in
-            self.imageThumbnail.setBackgroundImage(photo, for: UIControlState())
+            self.imageThumbnail.setBackgroundImage(photo, for: UIControl.State())
             self.imageThumbnail.layer.borderColor = UIColor.white.cgColor
             self.imageThumbnail.layer.borderWidth = 1.0
         }
@@ -37,7 +37,7 @@ class CameraViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "showCropView"){
             let vc = segue.destination as! CropViewController
-            vc.capturedImage = imageThumbnail.backgroundImage(for: UIControlState())
+            vc.capturedImage = imageThumbnail.backgroundImage(for: UIControl.State())
         }
     }
     
